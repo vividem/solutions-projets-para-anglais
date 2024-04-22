@@ -135,6 +135,7 @@ else:
 
 # Si le score actuel est meilleur que le score qu'on a récupéré dans le fichier (ou si le fichier n'existe pas encore)
 if score>meilleur_score:
+    print("Nouveau meilleur score!")
     # On ouvre le fichier en mode "écriture" (le "w" signifie "write")...
     fichier_score = open(emplacement_fichier_score, "w")
     # ... on écrit notre score dans le fichier (le mode "write" remplace l'ancien texte entièrement
