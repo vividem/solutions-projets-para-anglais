@@ -1,3 +1,6 @@
+# On importe la librairie os qui va nous aider à faire des manipulations liées à l'OS pour le BONUS 3 (ici de la manipulation de fichiers)
+import os
+
 # On prépare une variable dans laquelle va s'accumuler le score du joueur
 score = 0
 
@@ -115,3 +118,28 @@ if tout_reussi:
 print("Le quiz est terminé. Votre score total est: "+str(score))
 
 # BONUS 3
+emplacement_fichier_score = "./meilleur_score.txt"
+# On vérifie si le fichier pour sauvegarder le meilleur score existe déjà
+if os.path.exists(emplacement_fichier_score):
+    # Si il existe déjà, on l'ouvre en mode "lecture" (d'ou le "r" comme deuxième paramètre qui signifie "read"),...
+    fichier_score = open(emplacement_fichier_score, "r")
+    # ... on lit la première ligne de texte (ici à priori la seule) et on la convertit en int (vu qu'il s'gait du dernier meilleur score)...
+    meilleur_score = int(fichier_score.readline())
+    # ... et puis on referme le fichier (pour libérer son utilisation à d'autres programmes ou même à la suite de celui-ci).
+    fichier_score.close()
+else:
+    # Si le fichier n'existe pas, celà signifie que c'est la première partie.
+    # On donne donc un meilleur score plus bas que le score minimal possible pour être sûr que le score actuel soit meilleur que ça
+    # ainsi, à l'étape suivante on est sûr de créer le fichier de meilleur score
+    meilleur_score = -1
+
+# Si le score actuel est meilleur que le score qu'on a récupéré dans le fichier (ou si le fichier n'existe pas encore)
+if score>meilleur_score:
+    # On ouvre le fichier en mode "écriture" (le "w" signifie "write")...
+    fichier_score = open(emplacement_fichier_score, "w")
+    # ... on écrit notre score dans le fichier (le mode "write" remplace l'ancien texte entièrement
+    # il faudrait l'ouvrir en mode "append" pour rajouter du texte à la fin. Mais
+    # comme l'ancien meilleur score n'est plus important, on a décidé ici de l'écraser)...
+    fichier_score.write(str(score))
+    # ... et puis on referme à nouveau le fichier.
+    fichier_score.close()
