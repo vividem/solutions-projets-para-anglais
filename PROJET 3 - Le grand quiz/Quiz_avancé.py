@@ -1,5 +1,13 @@
 import random
 
+# Note: ce fichier parraît long, mais c'est parce qu'il fait des choses plus complèxes et complètes que les précédents
+# Mais il est bien plus optimisé que les deux autres. Si il y avait plus de questions à poser,
+# il contiendrait beaucoup moins de lignes que les deux autres.
+# Pour ne pas être submergé par la quantité de code, vous pouvez ignore le code des fonctions
+# (il est possible de diminuer le code dans une définition de fonction via la petite flèche à côté du nom de la fonction)
+# et vous concentrer juste sur les descriptions de celles-ci et sur le code principal.
+# Une fois que vous aurez saisi le principe, vous pourrez aller voir comment ces fonctions ont été implémentées
+
 # Fonction pour afficher les propostions dans un ordre aléatoire et avec une lettre pour chacune
 # Parametres: propositions: une liste de string représentant les propositions (la première string est la bonne réponse)
 # Return: la fonction renvoie la bonne lettre à répondre pour avoir juste
