@@ -15,6 +15,9 @@ while somme_joueur>0:
             continue
     elif type_pari.lower()=="b":
         choix = int(input("Quel nombre? (entre 1 et 36 inclus)\n"))
+        if choix<0 or choix>36:
+            print("Nombre en dehors des limites. Pari annulé.")
+            continue
     else:
         print("Je n'ai pas compris votre demande, pari annulé.")
         continue
