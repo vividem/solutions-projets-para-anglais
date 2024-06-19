@@ -1,3 +1,9 @@
+# Cette fonction sert à traduire une lettre via le chiffement de César
+# Pour ce faire, elle prend en paramètre un caractère (char nommé "lettre") ainsi
+# qu'un "offset": un int qui représente le décalage à effectuer dans l'alphabet
+# La fonction renvoit un char qui correspond au caractère reçu comme input, mais décalé dans l'alphabet
+# d'autant qu'indiqué par le paramètre offset.
+# (si le caractère n'est pas une lettre, la fonction renvoit ce caractère tel quel)
 def traduire_lettre(lettre, offset):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     # On transforme la lettre en minuscule pour ne pas devoir traiter les majuscules séparément.
